@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyApp.Views.BookPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="bookStack">
+                <Label Text="Book name" />
+                <Entry Text="{Binding BookName}" FontSize="Medium" />
+                <Label Text="Author" />
+                <Entry Text="{Binding Author}" FontSize="Medium" />
+                <Label Text="Genre" />
+                <Entry Text="{Binding Genre}" FontSize="Medium" />
+                <Label Text="Has been read" />
+                <CheckBox IsChecked="{Binding wasRead}" />
+                <Label Text="A comment" />
+                <Entry Text="{Binding Commentary}" FontSize="Medium" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button
+        Text="Add"
+        Command="{Binding ListViewModel.SaveBookCommand}"
+        CommandParameter="{Binding}"/>
+                <Button
+        Text="Delete"
+        Command="{Binding ListViewModel.DeleteBookCommand}"
+        CommandParameter="{Binding}"/>
+                <Button
+        Text="Back"
+        Command="{Binding ListViewModel.BackCommand}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+    
+    
